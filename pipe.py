@@ -18,6 +18,10 @@ mysql = MySQL(app)
 # Load the YOLO model
 model = YOLO('best.pt')
 
+@app.route('/')
+def landing():
+    return "Api running..."
+
 @app.route('/detect', methods=['POST'])
 def detect():
     data = request.get_json()
